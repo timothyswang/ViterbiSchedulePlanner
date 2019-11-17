@@ -202,6 +202,6 @@
   		"units": "4",
   		"description": "Courses in this area examine the historical and cultural foundations of contemporary and past societies by studying enduring and influential literary, political, economic, philosophical, legal, ethical or religious traditions. Courses can examine multiple aspects of a single culture (for example, the literary and philosophical heritage of classical Greece or imperial China) or can trace the development of a fundamental idea or tradition across multiple cultures.",
   		"prereqs" : null
-  	},
+  	}
   ]
 }
