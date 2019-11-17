@@ -7,15 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Users
+ * Servlet implementation class Register
  */
-public class Users extends HttpServlet {
+public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Users() {
+    public Register() {
+        super();
         // TODO Auto-generated constructor stub
     }
 

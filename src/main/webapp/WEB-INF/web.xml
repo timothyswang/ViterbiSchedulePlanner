@@ -5,23 +5,23 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>Class</servlet-name>
-  	<display-name>Class</display-name>
+  	<servlet-name>Login</servlet-name>
+  	<display-name>Login</display-name>
   	<description></description>
-  	<servlet-class>servlets.Class</servlet-class>
+  	<servlet-class>servlets.Login</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Users</servlet-name>
-  	<display-name>Users</display-name>
+  	<servlet-name>Register</servlet-name>
+  	<display-name>Register</display-name>
   	<description></description>
-  	<servlet-class>servlets.Users</servlet-class>
+  	<servlet-class>servlets.Register</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Class</servlet-name>
-  	<url-pattern>/Class</url-pattern>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/Login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Users</servlet-name>
-  	<url-pattern>/Users</url-pattern>
+  	<servlet-name>Register</servlet-name>
+  	<url-pattern>/Register</url-pattern>
   </servlet-mapping>
 </web-app>
