@@ -138,6 +138,101 @@
   	}
 	],
 
+	"premajor-reqs": [
+  	{
+  		"name": "Writing and Critical Reasoning - Thematic Approaches",
+  		"deptcode": "WRIT",
+  		"coursecode": "150",
+  		"units": "4",
+  		"description": "Academic writing, emphasizing analysis and argumentation, rhetorical judgment, critical reasoning, creative insight, the careful use of evidence, ethical perspectives, logical organization, stylistic and grammatical fluency.",
+  		"prereqs" : null
+  	},
+  	{
+  		"name": "Advanced Writing",
+  		"deptcode": "CSCI",
+  		"coursecode": "340",
+  		"units": "3",
+  		"description": "Instruction in writing for various audiences on topics related to a student's professional or disciplinary interests, with some emphasis on issues of broad public concern.",
+  		"prereqs" : [
+  		  {
+  		  	"i" : "WRIT 150"
+  		  }
+  		]
+  	},
+  	{
+  		"name": "Engineering Freshman Academy",
+  		"deptcode": "CSCI",
+  		"coursecode": "102",
+  		"units": "2",
+  		"description": "Introduction to the profession of engineering. Ethical, political and societal consequences of engineering innovations and the impact of engineering on everyday life. Team projects and guest lectures. Open to freshmen only.",
+  		"prereqs" : null
+  	},
+  	{
+  		"name": "Calculus I",
+  		"deptcode": "MATH",
+  		"coursecode": "125",
+  		"units": "4",
+  		"description": "Limits; continuity, derivatives and applications; antiderivatives; the fundamental theorem of calculus; exponential and logarithmic functions.",
+  		"prereqs" : [
+  		  {
+  		  	"i" : "MATH 108"
+  		  }
+  		]
+  	},
+  	{
+  		"name": "Calculus II",
+  		"deptcode": "MATH",
+  		"coursecode": "126",
+  		"units": "4",
+  		"description": "A continuation of MATH 125: trigonometric functions; applications of integration; techniques of integration; indeterminate forms; infinite series; Taylor series; polar coordinates.",
+  		"prereqs" : [
+  		  {
+  		  	"i" : "MATH 125"
+  		  }
+  		]
+  	},
+  	{
+  		"name": "Calculus III",
+  		"deptcode": "MATH",
+  		"coursecode": "226",
+  		"units": "4",
+  		"description": "Vectors, vector valued functions; differential and integral calculus of functions of several variables; Green's theorem.",
+  		"prereqs" : [
+  		  {
+  		  	"i" : "MATH 126"
+  		  }
+  		]
+  	},
+  	{
+  		"name": "Probability Theory",
+  		"deptcode": "MATH",
+  		"coursecode": "407",
+  		"units": "4",
+  		"description": "Probability spaces, discrete and continuous distributions, moments, characteristic functions, sequences of random variables, laws of large numbers, central limit theorem, special probability laws.",
+  		"prereqs" : [
+  		  {
+  		  	"i" : "MATH 226"
+  		  }
+  		]
+  	},
+  	{
+  		"name": "Basic Science I",
+  		"deptcode": "PHYS",
+  		"coursecode": "151",
+  		"units": "4",
+  		"description": "BISC 120, CHEM 105, PHYS 151",
+  		"prereqs" : null
+  	},
+  	{
+  		"name": "Basic Science II",
+  		"deptcode": "PHYS",
+  		"coursecode": "161",
+  		"units": "4",
+  		"description": "BISC 121, CHEM 115, PHYS 161",
+  		"prereqs" : null
+  	}
+	],
+
 	"general-education": [
   	{
   		"name": "The Arts",
