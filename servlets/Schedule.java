@@ -55,7 +55,7 @@ public class Schedule extends HttpServlet {
 		MongoCollection<Document> collection = database.getCollection("Users");
 		Document user = collection.find(eq("_id", "nneven@usc.edu")).first();
 		session.setAttribute("user", user.toJson());
-		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/index.html");
+		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/schedule.jsp");
         dispatch.forward(request, response);
 	}
 
