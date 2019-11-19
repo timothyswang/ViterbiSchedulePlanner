@@ -12,10 +12,10 @@
 </head>
 
 <body onload="loadSaved(user);">
-  <header>
-    <h1><br>Viterbi Schedule Planner</h1>
-  </header>
-
+  <div class="header">
+    <h1>Viterbi Schedule Planner</h1>
+  </div>
+  <br><br><br>
 <main class="main-container">
     <table cellpadding="0" cellspacing="0"> <tr> 
       <td> <ul class="columns">
