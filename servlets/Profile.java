@@ -1,11 +1,11 @@
-
-
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.client.MongoClients;
@@ -46,10 +46,9 @@ public class Profile extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		// ...
+		HttpSession session = request.getSession();
 		ConnectionString connString = new ConnectionString(
-				"mongodb+srv://password:username@cluster0-v2kcb.gcp.mongodb.net/test?retryWrites=true&w=majority"
+			"mongodb+srv://password:username@cluster0-v2kcb.gcp.mongodb.net/test?retryWrites=true&w=majority"
 		);
 		MongoClientSettings settings = MongoClientSettings.builder()
 		    .applyConnectionString(connString)
@@ -58,8 +57,13 @@ public class Profile extends HttpServlet {
 		MongoClient mongoClient = MongoClients.create(settings);
 		MongoDatabase database = mongoClient.getDatabase("ViterbiSchedule");
 		MongoCollection<Document> collection = database.getCollection("Users");
-		collection.find().forEach(printBlock); // PRINTS EACH USER JSON TO CONSOLE
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		MongoCursor<Document> cursor = collection.find(eq("_id", "nneven@usc.edu")).iterator();
+		Document user = cursor.next();
+		session.setAttribute("name", user.get("name"));
+		session.setAttribute("major", user.get("major"));
+		session.setAttribute("gradyear", user.get("gradyear"));
+		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/Profile.jsp");
+        dispatch.forward(request, response);
 	}
 
 	/**
