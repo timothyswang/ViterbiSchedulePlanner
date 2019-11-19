@@ -14,7 +14,7 @@ dragula([
   document.getElementById("sem8"),
   document.getElementById("premajor-reqs"),
   document.getElementById("major-reqs"),
-  document.getElementById("general-education")
+  document.getElementById("general-education ")
 ]);
 removeOnSpill: false
   .on("drag", function(el) {
