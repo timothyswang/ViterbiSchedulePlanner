@@ -22,16 +22,17 @@ import com.mongodb.client.model.Sorts;
 import java.util.Arrays;
 import org.bson.Document;
 
+
 /**
- * Servlet implementation class Profile
+ * Servlet implementation class Schedule
  */
-public class Profile extends HttpServlet {
+public class Schedule extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Profile() {
+    public Schedule() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -53,10 +54,8 @@ public class Profile extends HttpServlet {
 		MongoDatabase database = mongoClient.getDatabase("ViterbiSchedule");
 		MongoCollection<Document> collection = database.getCollection("Users");
 		Document user = collection.find(eq("_id", "nneven@usc.edu")).first();
-		session.setAttribute("name", user.get("name"));
-		session.setAttribute("major", user.get("major"));
-		session.setAttribute("gradyear", user.get("gradyear"));
-		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/Profile.jsp");
+		session.setAttribute("user", user.toJson());
+		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/index.html");
         dispatch.forward(request, response);
 	}
 
@@ -67,11 +66,5 @@ public class Profile extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	
-	Block<Document> printBlock = new Block<Document>() {
-	       public void apply(final Document document) {
-	           System.out.println(document.toJson());
-	       }
-	};
 
 }

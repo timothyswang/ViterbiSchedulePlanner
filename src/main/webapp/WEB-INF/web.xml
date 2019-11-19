@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>Register</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Schedule</servlet-name>
+  	<display-name>Schedule</display-name>
+  	<description></description>
+  	<servlet-class>Schedule</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Profile</servlet-name>
   	<url-pattern>/Profile</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Schedule</servlet-name>
+  	<url-pattern>/Schedule</url-pattern>
   </servlet-mapping>
 </web-app>
