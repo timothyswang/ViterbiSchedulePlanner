@@ -14,6 +14,7 @@
   </div>
 <br><br><br>
 <main class="main-container">
+  <div id="trash"> Trash </div>
     <table cellpadding="0" cellspacing="0"> <tr> 
       <td> <ul class="columns">
         <li class="column sem1-column">
@@ -26,6 +27,7 @@
 
         <li class="column sem3-column">
           <ul class="class-list" id="sem3">
+            <li class="class CSCI-class"> CSCI103 </li>
           </ul>
         </li>
       </ul>
@@ -49,10 +51,22 @@
           </ul>
         </li>
 
-        <li class="column sem4-column">
-          <ul class="class-list" id="sem4">
-          </ul>
-        </li>
+        <li class="column trash-column">
+        <div class="column-header">
+          <h4>Trash</h4>
+        </div>
+        <ul class="class-list" id="sem4">
+          <li class="class">
+            <p>Interviews</p>
+          </li>
+          <li class="class">
+            <p>Research</p>
+          </li>
+        </ul>
+        <div class="column-button">
+          <button class="button delete-button" onclick="emptyTrash()">Delete</button>
+        </div>
+      </li>
       </ul>
       </td><td>
         <ul class="columns">
@@ -81,7 +95,6 @@
         <ul class="class-list" id="premajor-reqs">
         </ul>
       </li>
-
       <li class="column sem8-column">
         <ul class="class-list" id="major-reqs">
         </ul>
@@ -90,18 +103,19 @@
   </td>
   <td>
     <ul class="columns">
+
       <li class="column ges-column">
         <ul class="class-list" id="general-education">
         </ul>
       </li>
-
-      <li class="column sem8-column">
-        <ul class="class-list" id="sem8">
-        </ul>
-      </li>
+      <li class="column sem4-column">
+          <ul class="class-list" id="sem4">
+          </ul>
+        </li>
+      
     </ul> 
   </td>
-  </tr></table>
+  </tr></table> 
 </main>
 
 <footer>

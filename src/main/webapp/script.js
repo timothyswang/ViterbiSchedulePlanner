@@ -1,6 +1,7 @@
 
 /* Custom Dragula JS */
 dragula([
+  document.getElementById("trash"),
   document.getElementById("sem1"),
   document.getElementById("sem2"),
   document.getElementById("sem3"),
@@ -11,14 +12,17 @@ dragula([
   document.getElementById("sem8"),
   document.getElementById("premajor-reqs"),
   document.getElementById("major-reqs"),
-  document.getElementById("general-education ")
+  document.getElementById("general-education")
 ]);
 removeOnSpill: false
   .on("drag", function(el) {
     el.className.replace("ex-moved", "");
   })
-  .on("drop", function(el) {
+  .on("drop", function(el, container) {
     el.className += "ex-moved";
+    if(container.className == "trash"){
+      trash.innerHTML == "";
+    }
   })
   .on("over", function(el, container) {
     container.className += "ex-over";
@@ -59,6 +63,6 @@ function addclass() {
 /* Vanilla JS to delete classs in 'Trash' column */
 function emptyTrash() {
   /* Clear classs from 'Trash' column */
-  document.getElementById("trash").innerHTML = "";
+  document.getElementById("sem4").innerHTML = "";
 }
 
