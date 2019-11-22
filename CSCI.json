@@ -1,9 +1,5 @@
 {
-  "name": "guest",
   "_id": "CSCI",
-  "password": "password",
-  "major": "Computer Science",
-  "gradyear": null,
   "schedule": [
     {
       "section": "sem1",
