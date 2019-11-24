@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +28,7 @@ import org.bson.Document;
 /**
  * Servlet implementation class Login
  */
+@WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -56,14 +58,35 @@ public class Login extends HttpServlet {
 		MongoCollection<Document> collection = database.getCollection("Users");
 		String username = request.getParameter("username");
 		Document user = collection.find(eq("_id", username)).first();
+		session.setAttribute("message", "");
 		if (user != null) {
-			session.setAttribute("user", user.toJson());
-			RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/schedule.jsp");
-	        dispatch.forward(request, response);
+			
+	        String password = request.getParameter("password");
+	        Document userTwo = collection.find(eq("_password",password)).first();
+	        if (userTwo == null) {
+	        	RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/Login.jsp");
+				session.setAttribute("message", "Password does not match!");
+		        dispatch.forward(request, response);
+		 
+	        }else {
+	        	if (user != userTwo) {
+	        		RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/Login.jsp");
+	        		session.setAttribute("message", "Password does not match!");
+			        dispatch.forward(request, response);
+	        	}else {
+	        		session.setAttribute("user", user.toJson());
+	    			RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/schedule.jsp");
+	    	        dispatch.forward(request, response);
+	        		session.setAttribute("login", true);
+	        		dispatch.forward(request, response);
+	        	}
+	        }
 		} else {
-			RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/login.jsp");
+			RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/Login.jsp");
+			session.setAttribute("message", "User does not exist!");
 	        dispatch.forward(request, response);
 		}
+		
 		
 	}
 
